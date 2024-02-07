@@ -1,0 +1,28 @@
+:root {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 3vw;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 2vw;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
