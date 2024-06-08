@@ -25,6 +25,22 @@ body {
   cursor: pointer;
 }
 
+.personal-logo {
+  height: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+span {
+  display: block;
+}
+
+/*Hamburger Menu*/
+
+.navbar-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /****HEADING****/
 
 h1, h3, p {
@@ -33,16 +49,28 @@ h1, h3, p {
 
 /****FONTS****/
 
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(2.25rem, 5.5vw, 4rem); }
+h3 { font-size: clamp(2rem, 5vw, 3rem); }
+h4 { font-size: clamp(1.75rem, 4.5vw, 3rem); }
+h5 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+h6 { font-size: clamp(1.25rem, 3.5vw, 2rem); }
+p {font-size: clamp(1rem, 2vw, 1.25rem);}
+
+/****CONTAINER-SECTION****/
+
+.container-section {
+  display: flex;
+
+}
 
 .container {
-  max-width: 1050px;
   width: 90%;
   margin: auto;
 }
 
 .navbar {
   width: 100%;
-  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.15);
 }
 
 .nav-container {
@@ -62,7 +90,7 @@ h1, h3, p {
 
 .navbar .nav-container a {
   text-decoration: none;
-  color: #0e2431;
+  color: #ffffff;
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
@@ -107,8 +135,7 @@ h1, h3, p {
   display: block;
   height: 4px;
   width: 100%;
-  border-radius: 10px;
-  background: #0e2431;
+  background: white;
 }
 
 .nav-container .hamburger-lines .line1 {
@@ -143,14 +170,6 @@ h1, h3, p {
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
-}
-
-.logo {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  font-size: 1.2rem;
-  color: #0e2431;
 }
 
 .nav-container input[type="checkbox"]:checked ~ .menu-items {
