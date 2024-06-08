@@ -65,7 +65,11 @@ span {
 
 section {
   display: flex;
-  
+  justify-content: center;
+}
+
+.content, .navbar-section {
+  max-width: 900px;
 }
 
 .container {
