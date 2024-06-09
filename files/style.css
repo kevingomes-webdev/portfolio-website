@@ -52,17 +52,19 @@ p {
   font-weight: 900;
   color: white;
   cursor: pointer;
+  text-align: left;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
 }
 
 .personal-logo {
-  height: clamp(1.5rem, 3vw, 2.5rem);
+  width: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 span {
   display: block;
 }
 
-.content img {
+.images-100 {
   width: 100%;
 }
 
@@ -75,13 +77,19 @@ span {
 
 /****EDUCATION****/
 
+
 .box-content {
   display: flex;
   flex-direction: column;
-  flex-basis: 5rem;
+  gap: 1rem;
+  padding: 6rem 0rem;
 }
 
-/***NAVIGATION-BAR****/
+.ltett-logo {
+  width: clamp(6rem, 8vw, 8rem);
+}
+
+/***SECTION****/
 
 section, header {
   display: flex;
@@ -98,52 +106,54 @@ section, header {
   margin: auto;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+/**Navigation bar***/
 
-
-nav {
+/* General Navbar Styles */
+.navbar-section nav, .nav-container {
   background-color: black;
 }
 
+/* Navbar Container and Menu Items */
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 62px;
+  position: relative;
 }
 
-.navbar .menu-items {
+.menu-items {
   display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  width: 100%;
+  transform: translateX(150%);
+  transition: transform 1s ease-in-out;
+  text-align: center;
+  overflow: hidden;
 }
 
-.navbar .nav-container li {
+/* Navbar Links */
+.menu-items li {
   list-style: none;
+  margin-bottom: 1.2rem;
+  font-size: 3rem;
+  font-weight: 900;
 }
 
-.navbar .nav-container a {
+.menu-items a {
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
   font-size: 1.2rem;
 }
 
-.navbar .nav-container a:hover{
+.menu-items a:hover {
   font-weight: bolder;
 }
 
-.nav-container {
-  display: block;
-  position: relative;
-  background-color: black;
-}
-
-.nav-container .checkbox {
+/* Hamburger Menu */
+.checkbox {
   position: absolute;
-  display: block;
   height: 32px;
   width: 32px;
   z-index: 5;
@@ -151,72 +161,43 @@ nav {
   cursor: pointer;
 }
 
-.nav-container .hamburger-lines {
+.hamburger-lines {
   display: block;
   height: 26px;
   width: 32px;
   position: absolute;
   z-index: 2;
-  
 }
 
-.nav-container .hamburger-lines .line {
+.hamburger-lines .line {
   display: block;
   height: 3px;
   width: 100%;
   background: white;
-}
-
-.nav-container .hamburger-lines .line1 {
-  transform-origin: 0% 0%;
   transition: transform 0.4s ease-in-out;
 }
 
-.nav-container .hamburger-lines .line2 {
+.hamburger-lines .line2 {
   transition: transform 0.2s ease-in-out;
 }
 
-.nav-container .hamburger-lines .line3 {
-  transform-origin: 0% 100%;
-  transition: transform 0.4s ease-in-out;
-}
-
-.navbar .menu-items {
-  padding-top: 3rem;
-  height: 100vh;
-  width: 100%;
-  transform: translate(150%);
-  display: flex;
-  flex-direction: column;
-  margin-left: -40px;
-  padding-left: 50px;
-  transition: transform 1s ease-in-out;
-  text-align: center;
-  overflow: hidden;
-}
-
-.navbar .menu-items li {
-  margin-bottom: 1.2rem;
-  font-size: 3rem;
-  font-weight: 900;
-}
-
-.nav-container input[type="checkbox"]:checked ~ .menu-items {
+/* Transformations on Checkbox Checked */
+.checkbox:checked ~ .menu-items {
   transform: translateX(0);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+.checkbox:checked ~ .hamburger-lines .line1 {
   transform: rotate(45deg);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+.checkbox:checked ~ .hamburger-lines .line2 {
   transform: scaleY(0);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+.checkbox:checked ~ .hamburger-lines .line3 {
   transform: rotate(-45deg);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .logo{
+.checkbox:checked ~ .personal-logo {
   display: none;
 }
