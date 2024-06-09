@@ -15,20 +15,32 @@ body {
 
 /****FONTS****/
 
-h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h1 { font-size: clamp(2.5rem, 7vw, 5rem); }
 h2 { font-size: clamp(2.25rem, 5.5vw, 4rem); }
-h3 { font-size: clamp(2rem, 5vw, 3rem); }
-h4 { font-size: clamp(1.75rem, 4.5vw, 3rem); }
-h5 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-h6 { font-size: clamp(1.25rem, 3.5vw, 2rem); }
+h3 { font-size: clamp(1.75rem, 5vw, 3rem); }
+h4 { font-size: clamp(1.5rem, 4vw, 2rem); }
+h5 { font-size: clamp(1.25rem, 4vw, 2.5rem); }
+h6 { font-size: clamp(1.10rem, 3.5vw, 2rem); }
 p {font-size: clamp(1rem, 2vw, 1.25rem);}
 
 /****HEADING****/
 
-h1, h3, p {
+h1, h2, h3, h5, p {
   color: white;
 }
 
+h3 {
+  font-weight: 900;
+}
+
+h4, h6 {
+  color: #4C4C4C;
+}
+
+p {
+  font-weight: 300;
+  text-align: justify;
+}
 
 /****HEADER****/
 
@@ -63,22 +75,37 @@ span {
 
 /****EDUCATION****/
 
-section {
+.box-content {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 5rem;
+}
+
+/***NAVIGATION-BAR****/
+
+section, header {
   display: flex;
   justify-content: center;
 }
 
-.content {
+.content, .navbar-section {
   max-width: 900px;
+  padding: 1rem;
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
 .navbar {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+nav {
   background-color: black;
 }
 
@@ -102,17 +129,16 @@ section {
   color: #ffffff;
   font-weight: 500;
   font-size: 1.2rem;
-  padding: 0.7rem;
 }
 
 .navbar .nav-container a:hover{
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .nav-container {
   display: block;
   position: relative;
-  height: 60px;
+  background-color: black;
 }
 
 .nav-container .checkbox {
@@ -120,8 +146,6 @@ section {
   display: block;
   height: 32px;
   width: 32px;
-  top: 20px;
-  left: 20px;
   z-index: 5;
   opacity: 0;
   cursor: pointer;
@@ -133,9 +157,7 @@ section {
   width: 32px;
   position: absolute;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  
 }
 
 .nav-container .hamburger-lines .line {
@@ -160,7 +182,7 @@ section {
 }
 
 .navbar .menu-items {
-  padding-top: 50%;
+  padding-top: 3rem;
   height: 100vh;
   width: 100%;
   transform: translate(150%);
@@ -168,14 +190,15 @@ section {
   flex-direction: column;
   margin-left: -40px;
   padding-left: 50px;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 1s ease-in-out;
   text-align: center;
+  overflow: hidden;
 }
 
 .navbar .menu-items li {
   margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 3rem;
+  font-weight: 900;
 }
 
 .nav-container input[type="checkbox"]:checked ~ .menu-items {
