@@ -50,13 +50,13 @@ span {
   display: block;
 }
 
+.content img {
+  width: 100%;
+}
+
 /*Hamburger Menu*/
 
-.navbar-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 
 
@@ -68,7 +68,7 @@ section {
   justify-content: center;
 }
 
-.content, .navbar-section {
+.content {
   max-width: 900px;
 }
 
