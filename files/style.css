@@ -74,6 +74,16 @@ span {
 
 .header-position {
   position: fixed;
+  background-color: black;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+#home-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 /*Hamburger Menu*/
@@ -109,10 +119,7 @@ section, header {
   padding: 1rem;
 }
 
-.container {
-  width: 100%;
-  margin: auto;
-}
+
 
 /******Navigation bar******/
 
@@ -131,9 +138,8 @@ section, header {
 
 .overlay-content {
   position: relative;
-  top: 25%;
+  top: 10%;
   width: 100%;
-  text-align: center;
   margin-top: 30px;
 }
 
@@ -154,6 +160,8 @@ section, header {
   color: #818181;
   display: block;
   transition: color 0.3s ease;
+  text-align: left;
+  padding-left: clamp(1rem, 25vw, 20rem);
 }
 
 .overlay-content a:hover,
@@ -165,6 +173,9 @@ section, header {
 
 .menu-button {
   width: clamp(1.5rem, 3vw, 2rem);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .closebtn {
@@ -174,28 +185,8 @@ section, header {
   font-size: 60px;
   background: none;
   border: none;
-  color: inherit;
+  color: white;
   cursor: pointer;
-}
-
-.nav-container input[type="checkbox"]:checked ~ .menu-items {
-  transform: translateX(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-  transform: rotate(45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-  transform: scaleY(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-  transform: rotate(-45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .logo{
-  display: none;
 }
 
 
