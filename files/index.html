@@ -13,30 +13,32 @@
   </head>
   <body>
     <header>
+      <div class="content">
+        <img class="personal-logo" src="../svg/personal-logo.svg" alt="personal-logo" />
+        <button class="menu-button" aria-label="Open Navigation" id="openBtn">
+          <img src="../svg/plus-symbol-logo.svg" alt="Plus Logo" />
+        </button>
+      </div>
     </header>
+
+    <nav id="myNav" class="overlay" aria-hidden="true">
+      <button class="closebtn" aria-label="Close Navigation" id="closeBtn">&times;</button>
+      <div class="overlay-content">
+        <button>languages</button>
+        <ul>
+          <li><a href="#"">HOME</a></li>
+          <li><a href="#">EDUCATION</a></li>
+          <li><a href="#">COMMERCIAL SKILLS</a></li>
+          <li><a href="#">TECHNICAL SKILLS</a></li>
+          <li><a href="#">SOFT SKILLS</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main>
-      <section>
+      <section id="education">
         <div class="content">
-          <div class="navbar-section">
-            <nav>
-              <div class="nav-container">
-                <img src="../svg/personal-logo.svg" alt="Personal Logo" class="personal-logo" />
-                <input class="checkbox" type="checkbox" id="menu-toggle" />
-                <div class="hamburger-lines">
-                  <span class="line line1"></span>
-                  <span class="line line2"></span>
-                  <span class="line line3"></span>
-                </div>
-                <ul class="menu-items">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Blogs</a></li>
-                  <li><a href="#">Portfolio</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
           
 
           <img src="../images/cv-image.png" alt="portrait image" class="images-100"/>
@@ -95,9 +97,11 @@
         </div>
       </section>
     </main>
+
     <footer>
 
     </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

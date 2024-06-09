@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--main-font-family);
   background-color: black;
@@ -68,6 +72,10 @@ span {
   width: 100%;
 }
 
+.header-position {
+  position: fixed;
+}
+
 /*Hamburger Menu*/
 
 
@@ -96,7 +104,7 @@ section, header {
   justify-content: center;
 }
 
-.content, .navbar-section {
+.content {
   max-width: 900px;
   padding: 1rem;
 }
@@ -106,98 +114,92 @@ section, header {
   margin: auto;
 }
 
-/**Navigation bar***/
+/******Navigation bar******/
 
-/* General Navbar Styles */
-.navbar-section nav, .nav-container {
-  background-color: black;
-}
-
-/* Navbar Container and Menu Items */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.menu-items {
-  display: flex;
-  flex-direction: column;
-  padding-top: 3rem;
+/* styles.css */
+.overlay {
+  height: 0;
   width: 100%;
-  transform: translateX(150%);
-  transition: transform 1s ease-in-out;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  overflow-y: hidden;
+  transition: height 0.5s ease;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
   text-align: center;
-  overflow: hidden;
+  margin-top: 30px;
 }
 
-/* Navbar Links */
-.menu-items li {
+.overlay-content ul {
   list-style: none;
-  margin-bottom: 1.2rem;
-  font-size: 3rem;
-  font-weight: 900;
+  padding: 0;
+  margin: 0;
 }
 
-.menu-items a {
+.overlay-content li {
+  margin: 1rem 0;
+}
+
+.overlay-content a {
+  padding: 8px;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: color 0.3s ease;
 }
 
-.menu-items a:hover {
-  font-weight: bolder;
+.overlay-content a:hover,
+.overlay-content a:focus {
+  color: #f1f1f1;
 }
 
-/* Hamburger Menu */
-.checkbox {
+/**Button**/
+
+.menu-button {
+  width: clamp(1.5rem, 3vw, 2rem);
+}
+
+.closebtn {
   position: absolute;
-  height: 32px;
-  width: 32px;
-  z-index: 5;
-  opacity: 0;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  background: none;
+  border: none;
+  color: inherit;
   cursor: pointer;
 }
 
-.hamburger-lines {
-  display: block;
-  height: 26px;
-  width: 32px;
-  position: absolute;
-  z-index: 2;
-}
-
-.hamburger-lines .line {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: white;
-  transition: transform 0.4s ease-in-out;
-}
-
-.hamburger-lines .line2 {
-  transition: transform 0.2s ease-in-out;
-}
-
-/* Transformations on Checkbox Checked */
-.checkbox:checked ~ .menu-items {
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
   transform: translateX(0);
 }
 
-.checkbox:checked ~ .hamburger-lines .line1 {
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
   transform: rotate(45deg);
 }
 
-.checkbox:checked ~ .hamburger-lines .line2 {
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
   transform: scaleY(0);
 }
 
-.checkbox:checked ~ .hamburger-lines .line3 {
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
   transform: rotate(-45deg);
 }
 
-.checkbox:checked ~ .personal-logo {
+.nav-container input[type="checkbox"]:checked ~ .logo{
   display: none;
 }
+
+
+
+
+
+
