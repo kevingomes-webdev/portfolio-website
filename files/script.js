@@ -26,17 +26,39 @@ $(document).ready(function() {
 
 
 
-gsap.to(".scrollWrapper", {
-  xPercent: -75, // Moves the container left by 75% of its width
-  ease: "none",
-  scrollTrigger: {
-      trigger: ".scrollWrapper", // Pins the container in place
-      scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      end: "+=3000", // End after scrolling 3000px
-      pin: true,
-      markers: true
+document.addEventListener("DOMContentLoaded", function() {
+  const container = document.querySelector(".scrollContainer");
+  
+  function getScrollAmount() {
+    return container.scrollWidth - window.innerWidth;
   }
+
+  function createScrollAnimation() {
+    // Kill any existing ScrollTriggers to prevent multiple instances
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    // Create the tween animation
+    gsap.to(container, {
+      x: () => -getScrollAmount(),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scrollWrapper",
+        pin: true,
+        scrub: 1,
+        end: () => "+=" + getScrollAmount(),
+        invalidateOnRefresh: true,
+        markers: true,
+      }
+    });
+  }
+
+  // Initial animation creation
+  createScrollAnimation();
+
+  // Re-create the animation on window resize
+  window.addEventListener('resize', createScrollAnimation);
 });
+
 
 
 
