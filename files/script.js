@@ -24,23 +24,20 @@ $(document).ready(function() {
 
 // Horizontal Scrolling Animation
 
-document.addEventListener("DOMContentLoaded", function() {
-  const container = document.querySelector(".races");
-  const sections = gsap.utils.toArray(".races .scrollBoxes");
 
-  let scrollTween = gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".racesWrapper",
+
+gsap.to(".scrollWrapper", {
+  xPercent: -75, // Moves the container left by 75% of its width
+  ease: "none",
+  scrollTrigger: {
+      trigger: ".scrollWrapper", // Pins the container in place
+      scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      end: "+=3000", // End after scrolling 3000px
       pin: true,
-      scrub: 1,
-      end: () => "+=" + container.offsetWidth,
-      markers: true,
-    }
-  });
-
-  console.log(1 / (sections.length - 1));
+      markers: true
+  }
 });
+
+
 
   
