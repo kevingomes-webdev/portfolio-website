@@ -161,6 +161,8 @@ span {
 }
 
 
+
+
 /******Navigation bar******/
 
 /* styles.css */
@@ -230,7 +232,24 @@ span {
 }
 
 
+/***TECHINCAL SKILLS*****************************************/
 
 
+.flexLogosContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4vw;
+  flex-wrap: wrap;
+}
+
+.flexLogos {
+  align-self: center;
+}
+
+.flexLogos > img {
+  filter: grayscale(100%);
+  width: clamp(3rem, 9vw, 6rem);
+}
 
 
