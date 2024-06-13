@@ -14,7 +14,12 @@ body {
     font-family: var(--main-font-family);
 }
 
-/***Error Message**/
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #error-message {
     color: red;
