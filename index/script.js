@@ -15,6 +15,8 @@ $(document).ready(function() {
 
 /***Animation****/
 
-const pw = gsap.timeline({
-    
-})
+const tl = gsap.timeline();
+
+tl.to(".box", {x: 500, duration: 5})
+  .to(".box", {y: 200, duration: 3})
+  .to(".box", {x: 0, duration: 2})

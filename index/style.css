@@ -62,5 +62,9 @@ h2 {
     color: red;
 }
 
+img {
+    width: clamp(8rem, 40vw, 20rem);
+}
+
 /***Decoration****/
 
