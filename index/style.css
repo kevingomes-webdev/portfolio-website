@@ -50,6 +50,14 @@ h2 {
     color: #4C4C4C;
 }
 
+#password {
+    border: none;
+    border-bottom: 1px solid #4C4C4C;
+    background-color: transparent;
+    color: #4C4C4C;
+    padding: 2vw 0;
+}
+
 #error-message {
     color: red;
 }

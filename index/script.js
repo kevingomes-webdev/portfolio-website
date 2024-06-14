@@ -15,3 +15,6 @@ $(document).ready(function() {
 
 /***Animation****/
 
+const pw = gsap.timeline({
+    
+})
