@@ -25,12 +25,16 @@ section {
 
 .container {
     padding: 3vw;
-    display: flex;
-    flex-direction: column;
+    
 }
 
-.space {
-    height: clamp(0.5rem, 3vw, 1rem);
+.containerElements {
+    padding: clamp(0.5rem, 3vw, 1rem) 0;
+    overflow: hidden;
+}
+
+.containerElements > * {
+    overflow: hidden;
 }
 
 #submit-btn {
@@ -39,7 +43,11 @@ section {
     border: none;
     text-transform: uppercase;
     cursor: pointer;
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: 900;
 }
+
+/**Text*******************/
 
 h1, h3, #submit-btn {
     color: white;
@@ -50,13 +58,31 @@ h2 {
     color: #4C4C4C;
 }
 
+/***Password*****************/
+
+
+.inputPassword {
+    display: flex;
+    flex-direction: column;
+}
+
 #password {
     border: none;
     border-bottom: 1px solid #4C4C4C;
     background-color: transparent;
     color: #4C4C4C;
-    padding: 2vw 0;
+    padding: clamp(0.5rem, 3vw, 1rem) 0;
+    font-family: var(--main-font-family);
 }
+
+
+
+#password:focus {
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+}
+
 
 #error-message {
     color: red;
@@ -68,3 +94,13 @@ img {
 
 /***Decoration****/
 
+::selection {
+    background-color: white; /* Background color of selected text */
+    color: black; /* Text color of selected text */
+  }
+  
+/* For Mozilla Firefox */
+::-moz-selection {
+background-color: white; /* Background color of selected text */
+color: black; /* Text color of selected text */
+}
