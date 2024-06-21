@@ -18,7 +18,7 @@ $(document).ready(function() {
         tl.from(".containerElements > *", {
             y: "200%",
             opacity: 0,
-            duration: 3,
+            duration: 5,
             ease: "power4.out",
             stagger: 0.3
         })
@@ -33,19 +33,20 @@ $(document).ready(function() {
             em.to("#error-message", {
                 y: 0,
                 opacity: 1,
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power1.out"
             });
 
             // Scale up slightly
             em.to("#error-message", {
-                duration: 0.3,
+                
+                duration: 0.2,
                 opacity: 0,
                 ease: "power1.out"
             });
 
             em.to("#error-message", {
-                duration: 0.3,
+                duration: 0.2,
                 opacity: 1,
                 ease: "power1.out"
             });
