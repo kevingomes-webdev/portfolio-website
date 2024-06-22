@@ -10,6 +10,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: white black;
+  scrollbar-width: thin;
 }
 
 body {
@@ -63,6 +65,7 @@ p {
   background-color: white; /* Background color of selected text */
   color: black; /* Text color of selected text */
 }
+
 
 /***SECTION****/
 
